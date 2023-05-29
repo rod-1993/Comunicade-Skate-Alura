@@ -1,7 +1,7 @@
 # Projeto - Comunidade Skate Alura
 Este repositório é destinada ao projeto estudado e criado em aula, do curso de formação em HTML e CSS da Alura.
 
-### Definições da Página
+# Definições da Página
 # Guia de estilos
 
 Toda a estilização que será usada no projeto dentro do figma.
