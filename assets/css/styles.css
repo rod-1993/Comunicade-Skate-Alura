@@ -1,0 +1,417 @@
+@font-face {
+    font-family: 'icones';
+    src: url(../font/icones.ttf);
+} /*importa font de icones para ser utilizado nos menus do cabeçalho*/
+
+body {
+    background-color: #1D232A;
+    font-family: 'Open Sans', 'icones', sans-serif;
+    color: #ffffff;
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+}
+
+/*Início cabeçalho*/
+.cabecalho {
+    display: flex; /*Deixar o cabeçalho em "flex container", que coloca um do lado do outro*/
+    justify-content: space-between; /*distribui os elementos, colocando os das pontas colados nas laterais*/
+    align-items: stretch; /*Alinhado no centro, ocupando apenas a altura necessaria do item no cabeçalho*/
+    background-color: #15191C;
+    padding: 8px 16px; /*espaçamento interno: 8px encima e embaixo, 16px dos lados*/
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16); /*sombra do cabeçalho*/
+}
+
+.cabecalho-menu i::before { 
+    font-size: 24px;
+    content: "\e904";
+} /*busca o icone existente no arquivo "font>icones.ttf*/
+
+.cabecalho-logo {
+    width: 40px; /*largura da imagem*/
+}
+
+.cabecalho--perfil {
+    display: none; /*faz com que, na versão mobile, não apareça o item*/
+}
+
+
+.cabecalho-notificacao i::before {
+    content: "\e906"; /*busca o icone/font existente no arquivo "font>icones.ttf*/
+    font-size: 24px;
+}
+/*Fim cabeçalho*/
+
+/*INICIO - Criação a formatação do cabeçalho quando for screen ou largura minima 1440px*/
+@media screen and (min-width: 1440px) {
+    .cabecalho {
+        background-color: #1D232A;
+        display: grid;
+        column-gap: 32px;
+        grid-template-columns: 1fr auto;
+        padding: 16px 60px;
+        height: 80px;
+        box-sizing: border-box; /*para garantir que a altura do bloco seja respeitada*/
+        grid-column: 2;/* indica que o elemento ocupa a primeira coluna do grid*/
+    }
+    .cabecalho-menu {
+        display: none;
+    }
+
+    .cabecalho-logo {
+        display: none;
+    }
+
+    .cabecalho--perfil {
+        display: grid;
+        grid-template-columns: repeat(3,auto); /*repete 3 colunas com valores automaticos*/
+        column-gap: 8px;
+        align-items: center;
+        justify-self: flex-end;
+        color: #95999C;
+        padding: 8px 32px;
+        border-right: 1px solid;
+    }
+
+    .cabecalho--perfil::before {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-image: url(../img/profile_2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cabecalho--perfil::after {
+        content: "\e90d";
+        color: #ffffff;
+        font-size: 1.5rem;
+    }
+}
+/*FINAL - Criação a formatação do cabeçalho quando for screen ou largura minima 1440px*/
+
+
+/*INICIO - Menu Lateral*/
+.menu-lateral {
+    display: flex; /* posiciona os elementos em bloco*/
+    flex-direction: column; /*define a direção que o bloco(flex containter) vai seguir, neste caso, em coluna (um abaixo do outro) */
+    background-color: #15191C;
+    width: 75vw; /*Largura padrão de viewport*/
+    height: 100vh; /*Altura de viewport*/
+    position: absolute;
+    left: -100vw;
+    transition: 0.25s;
+}
+
+.menu-lateral_ativo {
+    left: 0;
+    transition: 0.25s;
+}
+
+.menu-lateral-logo {
+    align-self: center; /*alinha só a logotipo do menu lateral no centro*/
+    width: 118px;
+    padding: 16px;
+}
+
+.menu-lateral-link {
+    height: 64px;
+    color: #95999C;
+    padding-left: 64px;
+    display: flex; /*cria o flex container com o icones e textos do menu*/
+    align-items: center; /*Alinha os icones, na horizontal, com os textos do menu, a partir do centro deles*/
+}
+
+.menu-lateral-link_ativo { 
+    color: #ffffff;
+    padding-left: 56px;
+    border-left: 8px solid #ffffff;
+} /*irá modificar o menu de acordo com qual tiver ativo no momento*/
+
+.menu-lateral-link::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    position: absolute;
+    left: 24px;
+}
+
+.menu-lateral-link_inicio::before {
+    content: "\e902";
+}
+
+.menu-lateral-link_videos::before {
+    content: "\e90e";
+}
+
+.menu-lateral-link_picos::before {
+    content: "\e909";
+}
+
+.menu-lateral-link_integrantes::before {
+    content: "\e903";
+}
+
+.menu-lateral-link_camisas::before {
+    content: "\e900";
+}
+
+.menu-lateral-link_pinturas::before {
+    content: "\e90a";
+}
+/*FINAL - Menu Lateral*/
+
+/*INICIO - Formatação do menu lateral quando for screen ou largura minima 1440px*/
+
+@media screen and (min-width: 1440px) {
+    .menu-lateral {
+        position: static;
+        width: 200px;
+        grid-column: 1; /* indica que o elemento ocupa a primeira coluna do grid*/
+        grid-row: 1 / span 2; /* indica que o elemento começa na primeira linha do grid e ocupa 2 linhas*/
+    }
+}
+
+/*FINAL - Formatação do menu lateral quando for screen ou largura minima 1440px*/
+
+/*INICIO - main*/
+
+.principal {
+    padding: 24px 16px;
+    display: grid;
+    gap: 16px;
+}
+
+
+.titulo-pagina {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.titulo-secao {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/*INICIO - Formatação do conteudo principal quando for screen ou largura minima 1440px*/
+@media screen and (min-width: 1440px) {
+    .principal {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 
+            "titulo-pagina titulo-pagina titulo-pagina"
+            "destaque-video destaque-video videos-recentes"
+            "secao-videos secao-videos secao-videos"
+            "produtos-recentes destaque-produtos destaque-produtos"
+            "secao-produtos secao-produtos secao-produtos";            
+        column-gap: 32px;
+        padding: 60px;
+        grid-column: 2;
+    }
+}
+/*FINAl - Formatação do conteudo principal quando for screen ou largura minima 1440px*/
+
+.cartao {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #2C343A;
+}
+
+.cartao-principal{
+    margin-bottom: 16px;
+}
+
+.cartao-conteudo {
+    padding: 16px;
+    display: grid; /*cria o grid container, fazendo com que os itens se tornem um bloco (como padrão, na verrical)*/
+    grid-template-columns: auto 1fr; /*faz com que o conteudo do grid container seja divida em "2 colunas" ('n'fr = fração)*/
+    gap: 6px; /*cria espaçamento entre "linhas" e "colunas" dentro do grid container*/
+}
+
+.cartao-imagem--desktop {
+    display: none;
+}
+
+.cartao-destaque {
+    grid-column: span 2; /*Com a utilização do grid container, define para este item que ocupe duas "células" na vertical*/
+}
+
+.cartao-titulo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    grid-column: span 2; /*Com a utilização do grid container, define para este item que ocupe duas "células" na vertical*/
+}
+
+.cartao-perfil {
+    color: #95999C;
+    font-size: 0.9rem;
+    grid-column: span 2; /*Com a utilização do grid container, define para este item que ocupe duas "células" na vertical*/
+}
+
+.cartao-info {
+    display: flex;
+    align-items: center;
+    color: #95999C;
+}
+
+.cartao-info_tempo::before {
+    content: "\e90c";
+    margin-right: 8px;
+}
+
+.cartao-info_visualizacao::before {
+    content: "\e90f";
+    margin-right: 8px;
+}
+
+.cartao-botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0480DC;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    justify-self: flex-end;
+}
+
+.cartao-botao_play {
+    font-size: 24px;
+}
+
+.cartao-botao_play::before {
+    content: "\e90b";
+}
+
+.cartao-botao_destaque {
+    width: 100%;
+    grid-column: span 2; /*Com a utilização do grid container, define para este item que ocupe duas "células" na vertical*/
+}
+
+.cartao-botao_destaque::before {
+    margin-right: 8px;
+}
+
+.cartao--recentes {
+    display: none;
+}
+/*INICIO - Formatação do cartão "recentes" quando for screen ou largura minima 1440px*/
+@media screen and (min-width: 1440px) {
+    .cartao-principal {
+        margin-bottom: 0;
+    }
+
+    .cartao-imagem--mobile {
+        display: none;
+    }
+    .cartao-imagem--desktop {
+        display: block;
+        padding: 16px 8px;
+    }
+
+    .cartao-botao_destaque {
+        grid-column: auto;
+    }
+
+    .cartao--recentes {
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        align-items: center;
+        row-gap: 24px;
+        width: 256px;
+        padding: 16px;
+        box-sizing: border-box;
+        align-self: flex-start;
+    }
+
+    .cartao--recentes .cartao-titulo {
+        grid-column: auto;
+    }
+
+    .cartao-link {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #0480DC;
+        justify-self: flex-end;
+    }
+
+    .cartao-lista {
+        display: grid;
+        row-gap: 16px;
+        grid-column: span 2;
+    }
+
+    .cartao-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 8px;
+    }
+
+    .cartao-item-Thumbnail {
+        width: 32px;
+        grid-row: span 2;
+    }
+
+    .cartao-item_titulo {
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+        font-weight: 700;
+    }
+
+    .cartao-item_perfil {
+        font-size: 0.8rem;
+        color: #95999C;
+    }
+}
+/*FINAL - Formatação do cartão "recentes" quando for screen ou largura minima 1440px*/
+
+.secao {
+    display: grid;
+    gap: 16px;
+}
+
+@media screen and (min-width: 1440px) {
+    .secao {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .titulo-secao {
+        grid-column: span 4;
+    }
+
+    .destaque-video {
+        grid-area: destaque-video;
+    }
+    
+    .videos-recentes {
+        grid-area: videos-recentes;
+    }
+    
+    .secao-videos {
+        grid-area: secao-videos;
+    }
+    
+    .destaque-produtos {
+        grid-area: destaque-produtos;
+    }
+    
+    .produtos-recentes {
+        grid-area: produtos-recentes;
+    }
+    
+    .secao-produtos {
+        grid-area: secao-produtos;
+    }
+}
+
+/*FINAL - main*/
+

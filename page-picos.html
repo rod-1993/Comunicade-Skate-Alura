@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZC | Picos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+</head>
+<body>
+    <header class="cabecalho">
+        <button class="cabecalho-menu" aria-label="Menu"><i></i></button>
+        <img src="./assets/img/logo.svg" alt="Logotipo da HZC" class="cabecalho-logo">
+        <p class="cabecalho--perfil">Bruno Lopez</p>
+        <button class="cabecalho-notificacao" aria-label="Notificação"><i></i></button>
+    </header>
+
+    <nav class="menu-lateral">
+        <img src="assets/img/logo.svg" alt="Logotipo da HZC" class="menu-lateral-logo">
+        <a href="./page-home.html" class="menu-lateral-link menu-lateral-link_inicio">Inicio</a>
+        <a href="./page-videos.html" class="menu-lateral-link menu-lateral-link_videos">Videos</a>
+        <a href="./page-picos.html" class="menu-lateral-link menu-lateral-link_picos menu-lateral-link_ativo">Picos</a>
+        <a href="#" class="menu-lateral-link menu-lateral-link_integrantes">Integrantes</a>
+        <a href="#" class="menu-lateral-link menu-lateral-link_camisas">Camisas</a>
+        <a href="#" class="menu-lateral-link menu-lateral-link_pinturas">Pinturas</a>
+    </nav>
+    
+    
+    <main class="principal">
+        <h2 class="titulo-pagina">Picos</h2>
+        
+        <article class="cartao cartao-principal destaque-video">
+            <img src="assets/img/mapa-picos.png" alt="Banner" class="cartao-imagem cartao-imagem--mobile">
+            <img src="assets/img/mapa-picos.png" alt="Banner" class="cartao-imagem cartao-imagem--desktop">
+            
+        </article>
+    <!--Cartão de destaques-->
+            <article class="cartao cartao--recentes videos-recentes">
+                <h3 class="cartao--titulo">Favoritos</h3>
+                <a href="#" class="cartao-link">Ver todos</a>
+                <ul class="cartao-lista">
+                    <li class="cartao-item">
+                        <img src="assets/img/artigo_1.png" alt="Thumbnail" class="cartao-item-Thumbnail">
+                        <h4 class="cartao-item_titulo">Gap do Itaú da Voluntários da Pátria</h4>
+                        <p class="cartao-item_perfil">Bruno Lopes</p>
+                    </li>
+                    <li class="cartao-item">
+                        <img src="assets/img/artigo_2.png" alt="Thumbnail" class="cartao-item-Thumbnail">
+                        <h4 class="cartao-item_titulo">Gap com mureta da Voluntários</h4>
+                        <p class="cartao-item_perfil">Luiza Sampaio</p>
+                    </li>
+                    <li class="cartao-item">
+                        <img src="assets/img/artigo_3.png" alt="Thumbnail" class="cartao-item-Thumbnail">
+                        <h4 class="cartao-item_titulo">Rampa da entrada do túnel Rebouças</h4>
+                        <p class="cartao-item_perfil">André Soares</p>
+                    </li>
+                    <li class="cartao-item">
+                        <img src="assets/img/artigo_4.png" alt="Thumbnail" class="cartao-item-Thumbnail">
+                        <h4 class="cartao-item_titulo">Wallride de pedra portuguesa da FGP</h4>
+                        <p class="cartao-item_perfil">Júlia Fonseca</p>
+                    </li>
+                </ul>
+            </article>
+<!--Tela de Videos-->
+        <section class="secao secao-videos">
+            <h3 class="titulo-secao">Mais visitados</h3>
+            <article class="cartao">
+                <img src="assets/img/artigo_1.png" alt="Video" class="cartao-imagem">
+                <div class="cartao-conteudo">
+                    <p class="cartao-perfil">Bruno Lopes</p>
+                    <h3 class="cartao-titulo">Gap do Itaú da Voluntários da Pátria</h3>
+                    <p class="cartao-info cartao-info_tempo">33 minutos</p>
+                    <button class="cartao-botao cartao-botao_play" aria-label="Assistir agora"></button>
+                </div>
+            </article>
+            <article class="cartao">
+                <img src="assets/img/artigo_2.png" alt="Video" class="cartao-imagem">
+                <div class="cartao-conteudo">
+                    <p class="cartao-perfil">Luiza Sampaio</p>
+                    <h3 class="cartao-titulo">Gap com mureta da Voluntários</h3>
+                    <p class="cartao-info cartao-info_tempo">33 minutos</p>
+                    <button class="cartao-botao cartao-botao_play" aria-label="Assistir agora"></button>
+                </div>
+            </article>
+            <article class="cartao">
+                <img src="assets/img/artigo_3.png" alt="Video" class="cartao-imagem">
+                <div class="cartao-conteudo">
+                    <p class="cartao-perfil">André Soares</p>
+                    <h3 class="cartao-titulo">Rampa da entrada do túnel Rebouças</h3>
+                    <p class="cartao-info cartao-info_tempo">33 minutos</p>
+                    <button class="cartao-botao cartao-botao_play" aria-label="Assistir agora"></button>
+                </div>
+            </article>
+            <article class="cartao">
+                <img src="assets/img/artigo_4.png" alt="Video" class="cartao-imagem">
+                <div class="cartao-conteudo">
+                    <p class="cartao-perfil">Júlia Fonseca</p>
+                    <h3 class="cartao-titulo">Wallride de pedra portuguesa da FGP</h3>
+                    <p class="cartao-info cartao-info_tempo">33 minutos</p>
+                    <button class="cartao-botao cartao-botao_play" aria-label="Assistir agora"></button>
+                </div>
+            </article>
+        </section>
+<!--Camisas mais recentes-->  
+</main>
+    <script src="index.js"></script> <!--chama o arquivo Java Script-->
+</body>
+</html>
